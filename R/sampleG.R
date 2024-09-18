@@ -7,7 +7,7 @@
 #' @return a named list
 #' @export
 #'
-#' @examples \dontrun{sampleG(x = ddt[1:10, c("LENGTH", "WEIGHT", "DDT")}
+#' @examples \dontrun{sampleG(x = ddt[1:10, c("LENGTH", "WEIGHT", "DDT")])}
 sampleG <- function(x = data.frame()) {
   # Data matrix
   X <- as.matrix(x)
@@ -26,7 +26,7 @@ sampleG <- function(x = data.frame()) {
   Xc <- X - one %*% t(xBar)
 
   # List
-  l <- list(Xc=Xc, xBar=xBar, X=X, n=n, p=p)
-  class(l) <- c(class(l), 'samg')
-  invisible(l)
+  x <- list(Xc=Xc, xBar=xBar, X=X, n=n, p=p)
+  class(x) <- "samg"
+  invisible(x)
 }

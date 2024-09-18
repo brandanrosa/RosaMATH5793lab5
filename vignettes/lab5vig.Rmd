@@ -1,0 +1,50 @@
+---
+title: "The RosaMATH5793lab5 Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The RosaMATH5793lab5 Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(RosaMATH5793lab5)
+```
+
+# Introduction
+
+This package contains an S3 constructor function `sampleG()` and two S3 methods, `print.samg` and `summary.samg`. The `sampleG()` function prints takes a data frame and converts to a matrix. Then produces an invisible named list containing the data matrix, the centered matrix, the mean matrix, sample size, and the number of variables. The produced list has class "samg". The S3 method `print` plots the first three components of the displacement matrix as vectors and produces a named list containing the first and last three observations of the centered (displacement) matrix and the angles between each deviance vector. The second S3 method `summary` produces a named list containing the generalized variance, total variance, the sample covariance matrix $S$, and the eigenvalues and eigenvectors of $S$. The data set $DDT$ is included in the package for the user. 
+
+# Example
+
+For this example, we will investigate these functions using a portion of the $DDT$ data set.
+
+## The `samplgeG()` Function
+
+```{r}
+l <- sampleG(x = ddt[1:10, c("LENGTH", "WEIGHT", "DDT")])
+l$Xc
+l$xBar
+l$X
+l$n
+l$p
+```
+
+## `print.samg()`
+
+```{r}
+print(l)
+```
+
+## `summary.samg()`
+
+```{r}
+summary(l)
+```

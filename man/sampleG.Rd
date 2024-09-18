@@ -16,5 +16,5 @@ a named list
 A function which uses the quantitative data frame to produce xbar the sample mean vector and the centered matrix
 }
 \examples{
-\dontrun{sampleG(x = ddt[1:10, c("LENGTH", "WEIGHT", "DDT")}
+\dontrun{sampleG(x = ddt[1:10, c("LENGTH", "WEIGHT", "DDT")])}
 }
