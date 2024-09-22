@@ -7,7 +7,7 @@
 \method{print}{samg}(x = list(), ...)
 }
 \arguments{
-\item{x}{a list from `sampleG()`}
+\item{x}{a list inherited from `sampleG()`}
 
 \item{...}{passes additional arguments throughout the function}
 }

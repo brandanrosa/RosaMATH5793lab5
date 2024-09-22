@@ -26,7 +26,7 @@ sampleG <- function(x = data.frame()) {
   Xc <- X - one %*% t(xBar)
 
   # List
-  x <- list(Xc=Xc, xBar=xBar, X=X, n=n, p=p)
-  class(x) <- "samg"
-  invisible(x)
+  l <- list(Xc=Xc, xBar=xBar, X=X, n=n, p=p)
+  class(l) <- "samg"
+  invisible(l)
 }

@@ -16,7 +16,8 @@ Depends:
 Imports:
   stats,
   utils,
-  smallstuff
+  graphics,
+  scatterplot3d
 Suggests: 
     knitr,
     rmarkdown

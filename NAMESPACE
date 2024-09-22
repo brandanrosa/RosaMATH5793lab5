@@ -2,8 +2,10 @@
 
 S3method(print,samg)
 S3method(summary,samg)
+export(myDispVec)
 export(sampleG)
-importFrom(smallstuff,allvectors3D)
+importFrom(graphics,segments)
+importFrom(scatterplot3d,scatterplot3d)
 importFrom(stats,cor)
 importFrom(stats,cov)
 importFrom(utils,head)

@@ -2,7 +2,7 @@
 #'
 #' An S3 Method for `sampleG()` which plots the first three components of the displacement vectors and returns a named list
 #'
-#' @param x a list from `sampleG()`
+#' @param x a list inherited from `sampleG()`
 #' @param ... passes additional arguments throughout the function
 #'
 #' @return a plot of the `p` vectors
@@ -10,7 +10,6 @@
 #'
 #' @importFrom stats cor
 #' @importFrom utils head tail
-#' @importFrom smallstuff allvectors3D
 #'
 #' @examples \dontrun{print(x = l)}
 print.samg <- function(x = list(), ...) {
@@ -23,8 +22,8 @@ print.samg <- function(x = list(), ...) {
   theta <- as.matrix(acos(cor(x$X)))
 
   # Plot
-  g <- allvectors3D(first)
+  myDispVec(x = first)
 
   # List
-  list(first=first, last=last, theta=theta, plot=g)
+  list(first=first, last=last, theta=theta)
 }

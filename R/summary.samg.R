@@ -2,7 +2,7 @@
 #'
 #' An S3 Method for `sampleG()` which returns a named list containing the generalized variance, total variance, sample cov matrix S, and the eigenvalues and eigenvectors of S
 #'
-#' @param object a list from `sampleG()`
+#' @param object a list inherited from `sampleG()`
 #' @param ... passes additional arguments throughout the function
 #'
 #' @return a named list
