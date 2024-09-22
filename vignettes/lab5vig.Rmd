@@ -1,0 +1,54 @@
+---
+title: "The RosaMATH5793lab5 Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The RosaMATH5793lab5 Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE,
+  fig.align = 'center',
+  fig.height = 5,
+  fig.width = 7
+)
+```
+
+```{r setup}
+library(RosaMATH5793lab5)
+```
+
+# Introduction
+
+This package creates a matrix from a data frame and (invisibly) prints several key items associated with the vector. The package contains an S3 Constructor function as well as a print and summary method. The constructor `sampleG()` returns an invisible list containing the centered matrix, the original data as a matrix, the mean vector, the length, and number of variables. The list has class `samg`. The `print` method returns a named list with the first and last three observations of the displacement vector and the angle measures between them. It also plots a 3D plot of the first three components of the displacement vectors. The final method, `summary` returns a named list containing the value of the general variance, the value of the total variance, the variance-covariance matrix $S$. Further the `eigen()` function is applied, and its results are also printed.
+
+# Example
+
+The `ddt` data set is included in this package. We will use a portion of the data for our example.
+
+```{r}
+ddtx <- ddt[1:10, c("LENGTH", "WEIGHT", "DDT")]
+ddtx
+```
+
+First, we assign an arbitrary name to the constructor functions output list. Notice that the class is printed for the list.
+
+```{r}
+l <- sampleG(ddtx)
+class(l)
+```
+
+Next we can use `print` and `summary` to obtain the information.
+
+```{r}
+print(l)
+```
+
+```{r}
+summary(l)
+```
